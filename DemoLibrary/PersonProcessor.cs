@@ -8,9 +8,15 @@ namespace DemoLibrary
 {
   public class PersonProcessor : IPersonProcessor
   {
-    public IEnumerable<PersonModel> LoadPeople(IDataAccess dataAccess)
+    private IDataAccess _dataAccess;
+    public PersonProcessor(IDataAccess dataAccess)
     {
-      throw new NotImplementedException();
+      _dataAccess = dataAccess;
+    }
+
+    public IEnumerable<PersonModel> LoadPeople()
+    {
+      return _dataAccess.LoadPeople();
     }
   }
 }

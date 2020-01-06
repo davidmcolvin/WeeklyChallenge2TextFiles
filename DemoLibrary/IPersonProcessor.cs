@@ -8,6 +8,6 @@ namespace DemoLibrary
 {
   public interface IPersonProcessor
   {
-    IEnumerable<PersonModel> LoadPeople(IDataAccess dataAccess);
+    IEnumerable<PersonModel> LoadPeople();
   }
 }

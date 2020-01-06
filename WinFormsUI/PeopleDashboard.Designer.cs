@@ -147,7 +147,7 @@
       this.peopleListBox.Size = new System.Drawing.Size(383, 329);
       this.peopleListBox.TabIndex = 12;
       // 
-      // Form1
+      // PeopleDashboard
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,8 +165,8 @@
       this.Controls.Add(this.headerFirstNameLabel);
       this.Controls.Add(this.headerMainLabel);
       this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-      this.Name = "Form1";
+      this.Margin = new System.Windows.Forms.Padding(6);
+      this.Name = "PeopleDashboard";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Text File Challenge";
       ((System.ComponentModel.ISupportInitialize)(this.ageNumericUpDown)).EndInit();

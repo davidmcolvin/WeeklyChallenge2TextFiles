@@ -12,5 +12,11 @@ namespace DemoLibrary
     public string LastName { get; set; }
     public short Age { get; set; }
     public bool IsAlive { get; set; }
+
+    public string FullName
+    {
+      get { return $"{FirstName} {LastName}"; }
+    }
+
   }
 }
