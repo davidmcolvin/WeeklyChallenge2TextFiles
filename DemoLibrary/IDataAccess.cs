@@ -8,6 +8,7 @@ namespace DemoLibrary
 {
   public interface IDataAccess
   {
-    IEnumerable<PersonModel> LoadPeople();
+    List<PersonModel> LoadPeople();
+    void SavePeople(List<PersonModel> people);
   }
 }

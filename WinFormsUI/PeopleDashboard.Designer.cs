@@ -34,7 +34,7 @@
       this.headerAgeLabel = new System.Windows.Forms.Label();
       this.headerIsAliveLabel = new System.Windows.Forms.Label();
       this.firstNameTextBox = new System.Windows.Forms.TextBox();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.lastNameTextBox = new System.Windows.Forms.TextBox();
       this.ageNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.isAliveCheckBox = new System.Windows.Forms.CheckBox();
       this.saveListButton = new System.Windows.Forms.Button();
@@ -96,12 +96,12 @@
       this.firstNameTextBox.Size = new System.Drawing.Size(174, 31);
       this.firstNameTextBox.TabIndex = 5;
       // 
-      // textBox1
+      // lastNameTextBox
       // 
-      this.textBox1.Location = new System.Drawing.Point(140, 113);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(174, 31);
-      this.textBox1.TabIndex = 6;
+      this.lastNameTextBox.Location = new System.Drawing.Point(140, 113);
+      this.lastNameTextBox.Name = "lastNameTextBox";
+      this.lastNameTextBox.Size = new System.Drawing.Size(174, 31);
+      this.lastNameTextBox.TabIndex = 6;
       // 
       // ageNumericUpDown
       // 
@@ -137,6 +137,7 @@
       this.addUserButton.TabIndex = 11;
       this.addUserButton.Text = "Add User";
       this.addUserButton.UseVisualStyleBackColor = true;
+      this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
       // 
       // peopleListBox
       // 
@@ -157,7 +158,7 @@
       this.Controls.Add(this.saveListButton);
       this.Controls.Add(this.isAliveCheckBox);
       this.Controls.Add(this.ageNumericUpDown);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.lastNameTextBox);
       this.Controls.Add(this.firstNameTextBox);
       this.Controls.Add(this.headerIsAliveLabel);
       this.Controls.Add(this.headerAgeLabel);
@@ -183,7 +184,7 @@
         private System.Windows.Forms.Label headerAgeLabel;
         private System.Windows.Forms.Label headerIsAliveLabel;
         private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.NumericUpDown ageNumericUpDown;
         private System.Windows.Forms.CheckBox isAliveCheckBox;
         private System.Windows.Forms.Button saveListButton;

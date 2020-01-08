@@ -14,9 +14,17 @@ namespace DemoLibrary
       _dataAccess = dataAccess;
     }
 
-    public IEnumerable<PersonModel> LoadPeople()
+    public void AddPerson(List<PersonModel> people, PersonModel person)
+    {
+      people.Add(person);
+    }
+
+    public List<PersonModel> LoadPeople()
     {
       return _dataAccess.LoadPeople();
     }
+
+
+
   }
 }

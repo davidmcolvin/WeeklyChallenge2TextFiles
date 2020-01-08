@@ -23,7 +23,7 @@ namespace DemoLibrary.Tests
         var cls = mock.Create<PersonProcessor>();
         var expected = GetSamplePeople();
 
-        var actual = cls.LoadPeople().ToList(); ;
+        var actual = cls.LoadPeople(); ;
 
         Assert.True(actual != null);
         Assert.Equal(expected.Count, actual.Count);
@@ -32,6 +32,36 @@ namespace DemoLibrary.Tests
         {
           Assert.Equal(expected[i].FirstName, actual[i].FirstName);
           Assert.Equal(expected[i].LastName, actual[i].LastName);
+        }
+
+      }
+    }
+
+    [Fact]
+    public void AddPerson_ValidCall()
+    {
+      PersonModel person = new PersonModel();
+      person.FirstName = "Test";
+      person.LastName = "Testerson";
+      person.Age = 10;
+      person.IsAlive = true;
+
+      using (var mock = AutoMock.GetLoose())
+      {
+        var cls = mock.Create<PersonProcessor>();
+        var original = GetSamplePeople();
+        var expected = original.ToList();
+        expected.Add(person);
+
+        cls.AddPerson(original, person);
+
+        Assert.True(original != null);
+        Assert.Equal(original.Count, expected.Count);
+
+        for (int i = 0; i < expected.Count(); i++)
+        {
+          Assert.Equal(expected[i].FirstName, original[i].FirstName);
+          Assert.Equal(expected[i].LastName, original[i].LastName);
         }
 
       }

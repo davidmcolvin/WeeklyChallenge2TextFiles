@@ -11,18 +11,18 @@ namespace DemoLibrary
   public class TextDataAccess : IDataAccess
   {
 
-    public IEnumerable<PersonModel> LoadPeople()
+    public List<PersonModel> LoadPeople()
     {
       List<PersonModel> output = new List<PersonModel>();
 
-      List<string> lines = GlobalConfig.AppKeyLookup("fileName").FullFilePath().LoadFile();
+      IEnumerable<string> lines = GlobalConfig.AppKeyLookup("fileName").FullFilePath().LoadFile();
 
       ConvertToPersonModel(output, lines);
 
       return output;
     }
 
-    private void ConvertToPersonModel(List<PersonModel> people, List<string> lines)
+    private void ConvertToPersonModel(List<PersonModel> people, IEnumerable<string> lines)
     {
       foreach (var line in lines)
       {
@@ -36,6 +36,11 @@ namespace DemoLibrary
 
         people.Add(p);
       }
+    }
+
+    public void SavePeople(List<PersonModel> people)
+    {
+      throw new NotImplementedException();
     }
 
   }

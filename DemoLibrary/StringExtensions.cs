@@ -15,14 +15,14 @@ namespace DemoLibrary
       return $"{ConfigurationManager.AppSettings["filePath"]}\\{fileName}";
     }
 
-    public static List<string> LoadFile(this string file)
+    public static IEnumerable<string> LoadFile(this string file)
     {
       if (File.Exists(file) == false)
       {
         return new List<string>();
       }
 
-      return File.ReadAllLines(file).ToList();
+      return File.ReadAllLines(file);
     }
   }
 }
