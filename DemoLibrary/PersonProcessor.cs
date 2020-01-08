@@ -24,7 +24,9 @@ namespace DemoLibrary
       return _dataAccess.LoadPeople();
     }
 
-
-
+    public void SavePeople(List<PersonModel> people)
+    {
+      _dataAccess.SavePeople(people);
+    }
   }
 }

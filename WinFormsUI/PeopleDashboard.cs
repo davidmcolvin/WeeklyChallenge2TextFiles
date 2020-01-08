@@ -54,5 +54,10 @@ namespace WinFormsUI
 
       RefreshBinding();
     }
+
+    private void saveListButton_Click(object sender, EventArgs e)
+    {
+      _personProcessor.SavePeople(_people);
+    }
   }
 }

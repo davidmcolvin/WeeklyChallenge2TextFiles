@@ -128,6 +128,7 @@
       this.saveListButton.TabIndex = 10;
       this.saveListButton.Text = "Save List";
       this.saveListButton.UseVisualStyleBackColor = true;
+      this.saveListButton.Click += new System.EventHandler(this.saveListButton_Click);
       // 
       // addUserButton
       // 

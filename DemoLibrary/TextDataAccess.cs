@@ -10,12 +10,20 @@ namespace DemoLibrary
 {
   public class TextDataAccess : IDataAccess
   {
+    private IFileService _fileService;
+
+    public TextDataAccess(IFileService fileService)
+    {
+      _fileService = fileService;
+    }
 
     public List<PersonModel> LoadPeople()
     {
       List<PersonModel> output = new List<PersonModel>();
 
-      IEnumerable<string> lines = GlobalConfig.AppKeyLookup("fileName").FullFilePath().LoadFile();
+      string fileName = GlobalConfig.AppKeyLookup("fileName");
+
+      IEnumerable<string> lines = _fileService.LoadFile(fileName);
 
       ConvertToPersonModel(output, lines);
 
@@ -40,7 +48,33 @@ namespace DemoLibrary
 
     public void SavePeople(List<PersonModel> people)
     {
-      throw new NotImplementedException();
+      string filePathAndfileName = 
+        $@"{GlobalConfig.AppKeyLookup("filePath")}\{GlobalConfig.AppKeyLookup("fileName")}";
+      List<string> output = new List<string>();
+
+      foreach (var person in people)
+      {
+        output.Add($"{person.FirstName},{person.LastName},{person.Age},{person.IsAlive}");
+      }
+
+      File.WriteAllLines(filePathAndfileName, output);
+      
+    }
+
+    private void ConvertToIEnumerableString(List<PersonModel> people, IEnumerable<string> lines)
+    {
+      foreach (var line in lines)
+      {
+        string[] parts = line.Split(',');
+        PersonModel p = new PersonModel();
+
+        p.FirstName = parts[0];
+        p.LastName = parts[1];
+        p.Age = short.Parse(parts[2]);
+        p.IsAlive = bool.Parse(parts[3]);
+
+        people.Add(p);
+      }
     }
 
   }

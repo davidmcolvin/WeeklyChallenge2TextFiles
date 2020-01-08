@@ -10,5 +10,6 @@ namespace DemoLibrary
   {
     List<PersonModel> LoadPeople();
     void AddPerson(List<PersonModel> people, PersonModel person);
+    void SavePeople(List<PersonModel> people);
   }
 }

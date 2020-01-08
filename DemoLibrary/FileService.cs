@@ -8,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary
 {
-  public static class StringExtensions
+  public class FileService : IFileService
   {
-    public static string FullFilePath(this string fileName)
+
+    private string FullFilePath(string fileName)
     {
       return $"{ConfigurationManager.AppSettings["filePath"]}\\{fileName}";
     }
 
-    public static IEnumerable<string> LoadFile(this string file)
+    public IEnumerable<string> LoadFile(string fileName)
     {
-      if (File.Exists(file) == false)
+      if (File.Exists(FullFilePath(fileName)) == false)
       {
         return new List<string>();
       }
 
-      return File.ReadAllLines(file);
+      return File.ReadAllLines(FullFilePath(fileName));
     }
   }
 }
