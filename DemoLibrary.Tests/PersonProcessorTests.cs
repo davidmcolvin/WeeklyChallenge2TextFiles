@@ -13,7 +13,6 @@ namespace DemoLibrary.Tests
     [Fact]
     public void LoadPeople_ValidCall()
     {
-
       using (var mock = AutoMock.GetLoose())
       {
         mock.Mock<IDataAccess>()
@@ -32,6 +31,8 @@ namespace DemoLibrary.Tests
         {
           Assert.Equal(expected[i].FirstName, actual[i].FirstName);
           Assert.Equal(expected[i].LastName, actual[i].LastName);
+          Assert.Equal(expected[i].Age, actual[i].Age);
+          Assert.Equal(expected[i].IsAlive, actual[i].IsAlive);
         }
 
       }
@@ -40,6 +41,8 @@ namespace DemoLibrary.Tests
     [Fact]
     public void AddPerson_ValidCall()
     {
+      ColumnOrderModel columnOrder = new ColumnOrderModel();
+
       PersonModel person = new PersonModel();
       person.FirstName = "Test";
       person.LastName = "Testerson";
@@ -62,6 +65,8 @@ namespace DemoLibrary.Tests
         {
           Assert.Equal(expected[i].FirstName, original[i].FirstName);
           Assert.Equal(expected[i].LastName, original[i].LastName);
+          Assert.Equal(expected[i].Age, original[i].Age);
+          Assert.Equal(expected[i].IsAlive, original[i].IsAlive);
         }
 
       }

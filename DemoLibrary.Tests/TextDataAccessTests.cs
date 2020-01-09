@@ -18,7 +18,12 @@ namespace DemoLibrary.Tests
       {
         mock.Mock<IFileService>()
         .Setup(x => x.LoadFile(null))
-        .Returns(GetSamplePeopleString());
+        .Returns(GetSampleFile());
+
+        mock.Mock<IColumnOrderProcessor>()
+        .Setup(x => x.LoadColumnOrder())
+        .Returns(GetSampleFileFirstLineAsColumnOrderModel());
+
 
         var cls = mock.Create<TextDataAccess>();
         var expected = GetSamplePeople();
@@ -37,14 +42,29 @@ namespace DemoLibrary.Tests
       }
     }
 
-    private IEnumerable<string> GetSamplePeopleString()
+    private IEnumerable<string> GetSampleFile()
     {
       List<string> output = new List<string>();
+      output.Add("FirstName,LastName,Age,IsAlive");
       output.Add("Test1,TestLast1,11,True");
       output.Add("Test2,TestLast2,22,False");
       output.Add("Test3,TestLast3,33,True");
 
       return output;
+    }
+
+    private ColumnOrderModel GetSampleFileFirstLineAsColumnOrderModel()
+    {
+      ColumnOrderModel output = new ColumnOrderModel();
+
+      output.FirstColumn = Enums.ColumnNames.FirstName;
+      output.SecondColumn = Enums.ColumnNames.LastName;
+      output.ThirdColumn = Enums.ColumnNames.Age;
+      output.FourthColumn = Enums.ColumnNames.IsAlive;
+
+      return output;
+      
+
     }
 
     private List<PersonModel> GetSamplePeople()

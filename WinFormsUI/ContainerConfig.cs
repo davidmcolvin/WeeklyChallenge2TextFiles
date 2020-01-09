@@ -17,6 +17,7 @@ namespace WinFormsUI
       builder.RegisterType<PersonProcessor>().As<IPersonProcessor>();
       builder.RegisterType<TextDataAccess>().As<IDataAccess>();
       builder.RegisterType<FileService>().As<IFileService>();
+      //builder.RegisterType<ColumnOrderProcessor>().As<IColumnOrderProcessor>(); 
       builder.RegisterType<PeopleDashboard>();
 
       return builder.Build();

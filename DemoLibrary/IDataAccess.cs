@@ -10,5 +10,6 @@ namespace DemoLibrary
   {
     List<PersonModel> LoadPeople();
     void SavePeople(List<PersonModel> people);
+    ColumnOrderModel LoadColumnOrderText(IEnumerable<string> lines = null);
   }
 }

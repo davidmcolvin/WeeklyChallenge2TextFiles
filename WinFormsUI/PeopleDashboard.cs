@@ -28,14 +28,13 @@ namespace WinFormsUI
     {
       peopleListBox.DataSource = null;
       peopleListBox.DataSource = _people;
-      peopleListBox.DisplayMember = "FullName";
+      peopleListBox.DisplayMember = nameof(PersonModel.DisplayText);
     }
 
     private void LoadPeople()
     {
       List<PersonModel> people = new List<PersonModel>();
       people = _personProcessor.LoadPeople();
-
       foreach (var person in people)
       {
         _people.Add(person);
@@ -49,6 +48,7 @@ namespace WinFormsUI
       p.FirstName = firstNameTextBox.Text;
       p.LastName = lastNameTextBox.Text;
       p.Age = Convert.ToInt16(ageNumericUpDown.Value);
+      p.IsAlive = isAliveCheckBox.Checked;
 
       _personProcessor.AddPerson(_people, p);
 

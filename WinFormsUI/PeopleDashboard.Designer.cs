@@ -94,21 +94,21 @@
       this.firstNameTextBox.Location = new System.Drawing.Point(140, 65);
       this.firstNameTextBox.Name = "firstNameTextBox";
       this.firstNameTextBox.Size = new System.Drawing.Size(174, 31);
-      this.firstNameTextBox.TabIndex = 5;
+      this.firstNameTextBox.TabIndex = 1;
       // 
       // lastNameTextBox
       // 
       this.lastNameTextBox.Location = new System.Drawing.Point(140, 113);
       this.lastNameTextBox.Name = "lastNameTextBox";
       this.lastNameTextBox.Size = new System.Drawing.Size(174, 31);
-      this.lastNameTextBox.TabIndex = 6;
+      this.lastNameTextBox.TabIndex = 2;
       // 
       // ageNumericUpDown
       // 
       this.ageNumericUpDown.Location = new System.Drawing.Point(140, 162);
       this.ageNumericUpDown.Name = "ageNumericUpDown";
       this.ageNumericUpDown.Size = new System.Drawing.Size(58, 31);
-      this.ageNumericUpDown.TabIndex = 7;
+      this.ageNumericUpDown.TabIndex = 3;
       // 
       // isAliveCheckBox
       // 
@@ -116,7 +116,7 @@
       this.isAliveCheckBox.Location = new System.Drawing.Point(140, 218);
       this.isAliveCheckBox.Name = "isAliveCheckBox";
       this.isAliveCheckBox.Size = new System.Drawing.Size(15, 14);
-      this.isAliveCheckBox.TabIndex = 8;
+      this.isAliveCheckBox.TabIndex = 4;
       this.isAliveCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.isAliveCheckBox.UseVisualStyleBackColor = true;
       // 
@@ -125,7 +125,7 @@
       this.saveListButton.Location = new System.Drawing.Point(17, 336);
       this.saveListButton.Name = "saveListButton";
       this.saveListButton.Size = new System.Drawing.Size(297, 52);
-      this.saveListButton.TabIndex = 10;
+      this.saveListButton.TabIndex = 6;
       this.saveListButton.Text = "Save List";
       this.saveListButton.UseVisualStyleBackColor = true;
       this.saveListButton.Click += new System.EventHandler(this.saveListButton_Click);
@@ -135,7 +135,7 @@
       this.addUserButton.Location = new System.Drawing.Point(17, 262);
       this.addUserButton.Name = "addUserButton";
       this.addUserButton.Size = new System.Drawing.Size(297, 52);
-      this.addUserButton.TabIndex = 11;
+      this.addUserButton.TabIndex = 5;
       this.addUserButton.Text = "Add User";
       this.addUserButton.UseVisualStyleBackColor = true;
       this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
@@ -147,7 +147,7 @@
       this.peopleListBox.Location = new System.Drawing.Point(349, 65);
       this.peopleListBox.Name = "peopleListBox";
       this.peopleListBox.Size = new System.Drawing.Size(383, 329);
-      this.peopleListBox.TabIndex = 12;
+      this.peopleListBox.TabIndex = 7;
       // 
       // PeopleDashboard
       // 
