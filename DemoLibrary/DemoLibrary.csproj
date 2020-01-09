@@ -43,11 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColumnOrderModel.cs" />
-    <Compile Include="ColumnOrderProcessor.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="FileService.cs" />
     <Compile Include="GlobalConfig.cs" />
-    <Compile Include="IColumnOrderProcessor.cs" />
     <Compile Include="IDataAccess.cs" />
     <Compile Include="IFileService.cs" />
     <Compile Include="IPersonProcessor.cs" />

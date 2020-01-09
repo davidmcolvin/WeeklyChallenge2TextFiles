@@ -20,10 +20,6 @@ namespace DemoLibrary.Tests
         .Setup(x => x.LoadFile(null))
         .Returns(GetSampleFile());
 
-        mock.Mock<IColumnOrderProcessor>()
-        .Setup(x => x.LoadColumnOrder())
-        .Returns(GetSampleFileFirstLineAsColumnOrderModel());
-
 
         var cls = mock.Create<TextDataAccess>();
         var expected = GetSamplePeople();
